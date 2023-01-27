@@ -19,59 +19,55 @@
             <div class="weather-app">
                 <form id="search-form" class="mb-3">
                     <div class="row">
-                    <div class="col-9">
-                    <input 
-                    type="search" 
-                    placeholder="Type a city..." 
-                    class="form-control"
-                    id="city-input"
-                    autocomplete="off"
-                    />
-                    </div>
-                    <div class="col-3">
-                    <input type="submit" value="Search" class="btn btn-primary w-100"/>
-                    </div>
+                        <div class="col-9">
+                            <input type="search" placeholder="Type a city..." class="form-control" id="city-input"
+                                autocomplete="off" />
+                        </div>
+                        <div class="col-3">
+                            <input type="submit" value="Search" class="btn btn-primary w-100" />
+                        </div>
                 </form>
-                </div>
-                <div class="overview">
-                    <h1 id="city"></h1>
-                    <ul>
-                        <li >
-                           Last updated: <span id="date"></span></li>
-                        <li id="description">
+            </div>
+            <div class="overview">
+                <h1 id="city"></h1>
+                <ul>
+                    <li>
+                        Last updated: <span id="date"></span></li>
+                    <li id="description">
 
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="d-flex weather-temperature">
+                        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Cloudy" id="icon" />
+                        <div>
+                            <strong id="temperature"></strong>
+                            <span class="units"><a href="#" id="celsius-link" class="active">ºC</a> | <a href="#"
+                                    id="fah-unit">ºF</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li>
+                            Humidity: <span id="humidity"></span>%
+                        </li>
+                        <li>
+                            Wind: <span id="wind"></span> km/h
                         </li>
                     </ul>
                 </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="d-flex weather-temperature">
-                            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Cloudy" id="icon" />
-                            <div>
-                                <strong id="temperature"></strong>
-                                <span class="units"><a href="#" id="celsius-link">ºC</a> | <a href="#" id="fah-unit">ºF</a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <ul>
-                            <li>
-                                Humidity: <span id="humidity"></span>%
-                            </li>
-                            <li>
-                                Wind: <span id="wind"></span> km/h
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
-            <small>
-                <a href="https://github.com/domeneack/weather-project" target="_blank"> Open-source code</a>, by
-                Domeneack
-                Foster
-            </small>
         </div>
+        <small>
+            <a href="https://github.com/domeneack/weather-project" target="_blank"> Open-source code</a>, by
+            Domeneack
+            Foster
+        </small>
+    </div>
     </div>
     <script src="src/app.js"></script>
 </body>

@@ -28,9 +28,9 @@ function showTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
-    let iconElement = document.querySelector("#icon");
-    
-    celsiusTemperature = Math.round(response.data.main.temp);
+  let iconElement = document.querySelector("#icon");
+
+  celsiusTemperature = Math.round(response.data.main.temp);
 
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
@@ -46,31 +46,33 @@ function showTemperature(response) {
 }
 
 function search(city) {
-    let apiKey = "3c0e95dacf97bf6b240c0bdb60ae15be";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
-    axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+  let apiKey = "3c0e95dacf97bf6b240c0bdb60ae15be";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
 
 function handleSubmit(event) {
-    event.preventDefault();
-    let cityInputElement = document.querySelector("#city-input");
-    search(cityInputElement.value);
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
 }
 
 function showFahrenheitTemperature(event) {
-    event.preventDefault();
-    let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function showCelsiusTemperature(event) {
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = celsiusTemperature;
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-
 
 let celsiusTemperature = null;
 
